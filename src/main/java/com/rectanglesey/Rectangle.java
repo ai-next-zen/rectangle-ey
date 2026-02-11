@@ -5,14 +5,7 @@ import java.util.List;
 
 public final class Rectangle {
 
-    private Rectangle() {
-        // Utility class
-    }
-
-    /**
-     * 1. INTERSECTION
-     * Determines if rectangles overlap and returns the intersection corner points.
-     */
+    // INTERSECTION
     public static List<String> getIntersectionPoints(double[] rect1, double[] rect2) {
         double[] a = normalize(rect1);
         double[] b = normalize(rect2);
@@ -34,10 +27,7 @@ public final class Rectangle {
         return points;
     }
 
-    /**
-     * 2. CONTAINMENT
-     * Returns true if rect1 is fully contained by rect2.
-     */
+    //CONTAINMENT
     public static boolean isContainedBy(double[] rect1, double[] rect2) {
         double[] a = normalize(rect1);
         double[] b = normalize(rect2);
@@ -45,10 +35,7 @@ public final class Rectangle {
         return a[0] >= b[0] && a[2] <= b[2] && a[1] >= b[1] && a[3] <= b[3];
     }
 
-    /**
-     * 3. ADJACENCY
-     * Returns one of: Proper, Sub-line, Partial, None
-     */
+    //ADJACENCY
     public static String detectAdjacency(double[] rect1, double[] rect2) {
         double[] a = normalize(rect1);
         double[] b = normalize(rect2);
@@ -99,11 +86,12 @@ public final class Rectangle {
         return new double[]{x1, y1, x2, y2};
     }
 
+    /**
     public static void main(String[] args) {
         double[] r1 = new double[]{0, 0, 10, 10};
         double[] r2 = new double[]{10, 2, 15, 8};
 
         System.out.println("Adjacency: " + detectAdjacency(r1, r2));
         System.out.println("R2 contained in R1: " + isContainedBy(r2, r1));
-    }
+    }*/
 }
